@@ -1,0 +1,79 @@
+            .pictures{
+                  margin: 10vh;
+                  text-align: center;
+            }
+
+            .pictures img{
+                  height: 30vh;
+                  margin: 20px;
+                  transition-property: all;
+                  transition-duration: 0.5s;
+            }
+
+            .pictures img:hover{
+                  transform: scale(1.2);
+                  box-shadow: 4px 4px 10px 4px gray;
+            }
+
+            .lightbox{
+                  background-color: rgb(0,0,0,0.8);
+                  text-align: center;
+                  height: 100vh;
+                  width: 100vw;
+                  position:absolute;
+                  top: 0px;
+                  left: 0px;
+                  opacity: 0;
+                  pointer-events: none;
+                  transition: opacity 0.5s;
+                  z-index: 2;
+            }
+
+            .lightbox img{
+                  height: 80vh;
+            }
+
+            .lightbox:target{
+                  opacity: 1;
+                  pointer-events: auto;
+            }
+
+            .close{
+                  position: absolute;
+                  top:  0px;
+                  left: 0px;
+                  width: 100vw;
+                  height: 100vh;
+            }
+
+            .image-wrapper{
+                  display: inline-block;
+                  position: relative;
+            }
+
+            .image-wrapper::before{
+                  content: "";
+                  height: 40px;
+                  width: 40px;
+                  border-radius: 50%;
+                  background-color: white;
+                  display: inline-block;
+                  position: absolute;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  z-index: 2;
+                  transition: all 0.5s;
+            }
+
+            .image-wrapper:hover::before{
+                  background-color: black;
+                  top: -10%;
+            }
+
+            .pictures::after{
+                  content: "";
+                  height: 7px;
+                  width: 80vw;
+                  background-image: linear-gradient(to right,yellow, green, red);
+                  display: inline-block;
+            }
